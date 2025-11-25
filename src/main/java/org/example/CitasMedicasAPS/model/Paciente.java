@@ -14,4 +14,8 @@ public class Paciente extends BaseEntity {
     private int edad;
     private String telefono;
 
+    public String getNombreCompleto() {
+        return nombre + " " + apellido;
+    }
+
 }
