@@ -15,7 +15,7 @@ import java.time.LocalTime;
 @Entity
 @Getter
 @Setter
-@Tab(properties = "fecha, hora, medico, paciente.nombre, paciente.apellido, estado")
+@Tab(properties = "fecha, hora, medico.nombreCompleto, paciente.nombre, paciente.apellido, estado")
 public class Cita extends BaseEntity{
     private LocalDate fecha;
     private LocalTime hora;

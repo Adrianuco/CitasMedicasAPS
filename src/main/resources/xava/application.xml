@@ -19,16 +19,5 @@
 		<controller name="Print"/>
 	</module>		
 	-->
-    <module name="CitasAdmin">
-        <model name="Cita"/>
-        <view name="AdminView"/>
-        <controller name="Typical"/>
-    </module>
-
-    <module name="CitasMedico">
-        <model name="Cita"/>
-        <view name="MedicoView"/>
-        <controller name="Typical"/>
-    </module>
 	
 </application>

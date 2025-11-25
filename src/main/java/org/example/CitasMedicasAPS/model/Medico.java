@@ -23,7 +23,8 @@ public class Medico extends BaseEntity {
 
     private String email;
 
-    @Stereotype("NAME")
+    public String nombreCompleto = nombre + " " + apellido;
+
     public String getNombreCompleto() {
         return nombre + " " + apellido;
     }
