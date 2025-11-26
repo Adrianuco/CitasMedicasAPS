@@ -13,21 +13,11 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Tab(properties="nombre, apellido, especialidad.nombre, email")
-public class Medico extends BaseEntity {
-    private String nombre;
-    private String apellido;
+public class Medico extends Persona {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @DescriptionsList
     private Especialidad especialidad;
 
-    private String email;
-
-    public String nombreCompleto = nombre + " " + apellido;
-
-    public String getNombreCompleto() {
-        return nombre + " " + apellido;
     }
 
-
-}
