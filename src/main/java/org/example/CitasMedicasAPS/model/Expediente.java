@@ -13,6 +13,5 @@ import javax.persistence.OneToOne;
 public class Expediente extends BaseEntity{
     @OneToOne(cascade = CascadeType.ALL)
     private Paciente paciente;
-    private String antecedentesPersonales;
-    private String antecedentesFamiliares;
+
 }
