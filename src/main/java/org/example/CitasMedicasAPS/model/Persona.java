@@ -14,6 +14,7 @@ public abstract class Persona extends BaseEntity{
     private String nombre;
     private String apellido;
     private LocalDate fechaNacimiento;
+    private Integer edad;
     private Sexo sexo;
     private String email;
     private String telefono;

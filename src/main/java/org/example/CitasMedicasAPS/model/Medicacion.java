@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Embeddable
 @Getter
 @Setter
-public class Medicacion extends BaseEntity {
+public class Medicacion {
     private String nombreMedicamento;
     private String dosis;
     private String frecuencia;

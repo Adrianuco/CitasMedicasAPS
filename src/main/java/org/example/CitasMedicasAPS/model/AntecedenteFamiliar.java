@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @Embeddable
 @Getter
 @Setter
-public class AntecedenteFamiliar extends BaseEntity {
+public class AntecedenteFamiliar {
     private Parentesco parentesco;
     private String condicion;
     private BigDecimal edadAparicion;

@@ -9,9 +9,9 @@ import javax.persistence.Embedded;
 @Embeddable
 @Getter
 @Setter
-public class ContactoEmergencia extends BaseEntity {
-    private String nombre;
-    private String apellido;
-    private String telefono;
-    private String direccion;
+public class ContactoEmergencia {
+    private String nombreContacto;
+    private String apellidoContacto;
+    private String telefonoContacto;
+    private String direccionContacto;
 }

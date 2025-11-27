@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Embeddable
 @Getter
 @Setter
-public class AntecedenteQuirurgico extends BaseEntity {
+public class AntecedenteQuirurgico {
     private String nombreProcedimiento;
     private String descripcionProcedimiento;
     private LocalDate fechaProcedimiento;

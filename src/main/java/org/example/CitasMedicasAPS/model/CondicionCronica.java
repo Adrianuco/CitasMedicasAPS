@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Embeddable
 @Getter
 @Setter
-public class CondicionCronica extends BaseEntity {
+public class CondicionCronica {
     private String condicion;
     private LocalDate fechaDiagnostico;
     private String estadoActual;

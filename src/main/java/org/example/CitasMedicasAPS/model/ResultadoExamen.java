@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Embeddable
 @Getter
 @Setter
-public class ResultadoExamen extends BaseEntity {
+public class ResultadoExamen {
     private String examen;
     private LocalDate fechaRealizacion;
 
