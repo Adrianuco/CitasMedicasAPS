@@ -16,7 +16,5 @@ public class Alergia {
     private String reaccion;
     private Severidad severidad;
     private LocalDate fechaDiagnostico;
-    private String notas;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Expediente expediente;
+    private String notasAlergia;
 }

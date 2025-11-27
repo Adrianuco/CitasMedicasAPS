@@ -15,14 +15,6 @@ public class Expediente extends BaseEntity{
     @OneToOne(optional = true)
     private Paciente paciente;
 
-    @Embedded
-    private Alergia alergia;
-    private Vacuna vacuna;
-    private AntecedenteQuirurgico antecedenteQuirurgico;
-    private AntecedenteFamiliar antecedenteFamiliar;
-    private CondicionCronica condicionCronica;
-    private Medicacion medicacion;
-    private ResultadoExamen resultadoExamen;
 
     @ElementCollection
     @CollectionTable(name="expediente_alergia", joinColumns = @JoinColumn(name="id"))

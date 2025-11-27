@@ -12,11 +12,9 @@ import java.time.LocalDate;
 @Embeddable
 @Getter
 @Setter
-public class Vacuna extends BaseEntity {
+public class Vacuna {
     private String nombreVacuna;
     private LocalDate fechaAplicacion;
     private LocalDate proximaDosis;
-    private String notas;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Expediente expediente;
+    private String notasVacuna;
 }

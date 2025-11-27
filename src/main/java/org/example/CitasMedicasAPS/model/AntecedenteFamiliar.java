@@ -14,5 +14,5 @@ public class AntecedenteFamiliar {
     private Parentesco parentesco;
     private String condicion;
     private BigDecimal edadAparicion;
-    private String notas;
+    private String notasAntecedenteFamiliar;
 }

@@ -15,7 +15,7 @@ public class AntecedenteQuirurgico {
     private String nombreProcedimiento;
     private String descripcionProcedimiento;
     private LocalDate fechaProcedimiento;
-    private String notas;
+    private String notasAntecedenteQuirurgico;
     @ManyToOne(fetch = FetchType.LAZY)
     private Expediente expediente;
 }

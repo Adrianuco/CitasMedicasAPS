@@ -14,5 +14,5 @@ public class CondicionCronica {
     private LocalDate fechaDiagnostico;
     private String estadoActual;
     private String tratamientoActual;
-    private String notas;
+    private String notasCondicionCronica;
 }
