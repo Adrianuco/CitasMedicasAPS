@@ -9,7 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
-@Entity
+@Embeddable
 @Getter
 @Setter
 public class Vacuna extends BaseEntity {
