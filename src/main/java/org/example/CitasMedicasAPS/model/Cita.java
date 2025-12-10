@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.example.CitasMedicasAPS.calculators.CalcularEstado;
 import org.openxava.annotations.*;
+import org.openxava.annotations.Hidden;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -31,6 +32,9 @@ public class Cita extends BaseEntity {
     @ReadOnly
     @DefaultValueCalculator(CalcularEstado.class)
     private estadoCita estado;
+
+    @Hidden
+    private boolean recordatorioEnviado;
 
     @PostPersist
     private void notificarPaciente() {
