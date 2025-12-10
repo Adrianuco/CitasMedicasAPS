@@ -8,7 +8,7 @@ import org.openxava.annotations.*;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
-import javax.ws.rs.DefaultValue;
+import javax.persistence.PostPersist;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -31,4 +31,20 @@ public class Cita extends BaseEntity {
     @ReadOnly
     @DefaultValueCalculator(CalcularEstado.class)
     private estadoCita estado;
+
+    @PostPersist
+    private void notificarPaciente() {
+        if (paciente != null && paciente.getEmail() != null) {
+            String asunto = "Confirmación de Cita Médica";
+            String contenido = "Estimado " + paciente.getNombre() + " " + paciente.getApellido() + ",\n\n" +
+                    "Su cita ha sido agendada para el día " + fecha + " a las " + hora + ".\n\n" +
+                    "Atentamente,\nClínica Médica";
+            try {
+                org.openxava.util.Emails.send(paciente.getEmail(), asunto, contenido);
+            } catch (Exception e) {
+                System.out.println("Error enviando correo a " + paciente.getEmail());
+                e.printStackTrace();
+            }
+        }
+    }
 }
