@@ -2,13 +2,13 @@ package org.example.CitasMedicasAPS.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.openxava.annotations.DescriptionsList;
-import org.openxava.annotations.Tab;
-import org.openxava.annotations.View;
+import org.example.CitasMedicasAPS.calculators.CalcularEstado;
+import org.openxava.annotations.*;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import javax.ws.rs.DefaultValue;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -16,7 +16,7 @@ import java.time.LocalTime;
 @Getter
 @Setter
 @Tab(properties = "fecha, hora, medico.nombre, paciente.nombre, paciente.apellido, estado")
-public class Cita extends BaseEntity{
+public class Cita extends BaseEntity {
     private LocalDate fecha;
     private LocalTime hora;
 
@@ -28,5 +28,7 @@ public class Cita extends BaseEntity{
     @DescriptionsList(descriptionProperties = "nombre, apellido")
     private Paciente paciente;
 
+    @ReadOnly
+    @DefaultValueCalculator(CalcularEstado.class)
     private estadoCita estado;
 }
