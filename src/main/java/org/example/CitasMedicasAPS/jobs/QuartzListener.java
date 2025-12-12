@@ -22,7 +22,6 @@ public class QuartzListener implements ServletContextListener {
                     .withIdentity("notificadorCitasJob", "grupo1")
                     .build();
 
-            // Run daily at 8:00 AM
             Trigger trigger = TriggerBuilder.newTrigger()
                     .withIdentity("notificadorTrigger", "grupo1")
                     .withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(8, 0))

@@ -6,8 +6,6 @@ import org.quartz.JobExecutionException;
 import org.openxava.util.Emails;
 import org.example.CitasMedicasAPS.model.Cita;
 import org.example.CitasMedicasAPS.model.estadoCita;
-import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.time.LocalDate;
 import java.util.List;
@@ -17,11 +15,8 @@ public class NotificadorCitasJob implements Job {
 
     public void execute(JobExecutionContext context) throws JobExecutionException {
         try {
-            // Get current time
             LocalDate manana = LocalDate.now().plusDays(1);
 
-            // Query for appointments for tomorrow with PENDING status and no reminder sent
-            // yet
             String jpql = "SELECT c FROM Cita c WHERE c.fecha = :manana " +
                     "AND c.estado = :pendiente " +
                     "AND c.recordatorioEnviado = false";
@@ -43,7 +38,6 @@ public class NotificadorCitasJob implements Job {
                         Emails.send(cita.getPaciente().getEmail(), asunto, contenido);
                         System.out.println("Recordatorio enviado a: " + cita.getPaciente().getEmail());
 
-                        // Mark as sent and update
                         cita.setRecordatorioEnviado(true);
                         XPersistence.getManager().merge(cita);
 
@@ -54,7 +48,6 @@ public class NotificadorCitasJob implements Job {
                 }
             }
 
-            // Commit changes to save recordatorioEnviado flag
             XPersistence.commit();
 
         } catch (Exception e) {

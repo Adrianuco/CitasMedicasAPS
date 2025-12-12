@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.openxava.annotations.DefaultValueCalculator;
 import org.openxava.annotations.ReadOnly;
-import org.openxava.calculators.CurrentDateCalculator;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -14,7 +13,7 @@ import java.time.LocalDate;
 @Entity
 @Getter
 @Setter
-public class Paciente extends Persona{
+public class Paciente extends Persona {
     private EstadoCivil estadoCivil;
     private String ocupacion;
     private BigDecimal peso;
@@ -25,6 +24,6 @@ public class Paciente extends Persona{
     private ContactoEmergencia contactoEmergencia;
 
     @ReadOnly
-    @DefaultValueCalculator(CurrentDateCalculator.class)
+    @DefaultValueCalculator(org.example.CitasMedicasAPS.calculators.CalculadorFechaActual.class)
     private LocalDate fechaRegistro;
 }
