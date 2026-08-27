@@ -18,5 +18,6 @@ public class Horario extends BaseEntity{
     private LocalTime horaFin;
     @ManyToOne(fetch = FetchType.LAZY)
     @DescriptionsList
+            (descriptionProperties = "nombre, apellido")
     private Medico medico;
 }

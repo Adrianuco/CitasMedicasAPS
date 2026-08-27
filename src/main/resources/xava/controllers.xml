@@ -33,4 +33,12 @@ https://github.com/openxava/openxava/blob/master/openxavatest/src/main/resources
 	</controller>    
     -->
     
+    <controller name="Cita">
+    	<extends controller="Typical"/>
+    	<action name="marcarCompletada"
+    		class="org.example.CitasMedicasAPS.actions.MarcarCitaCompletada"
+    		mode="list"
+    		icon="check"/>
+	</controller>
+
 </controllers>
